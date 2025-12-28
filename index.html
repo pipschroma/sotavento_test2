@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS file -->
     <link rel="stylesheet" href="styles.css">
-    <title>Teste 2</title>
+    <!-- Title and Icon -->
+    <title>SOTAVENTO</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/pipschroma/sotavento_test/refs/heads/main/favicon_test.ico">
 </head>
 <body>
     <!-- Javascript file -->
@@ -13,7 +15,7 @@
 
     <!-- Initial Page -->
     <div id="initial_page">
-        <h1>TESTE</h1>
+        <img src="images\sotalogo.png" alt="tipo um logo de sotavento" id="sota-logo"></img>
         <div id="contents_initial_page">
 
             <!-- Buttons of the Initial Page-->
@@ -46,11 +48,68 @@
                 </div>
             </div>
 
+            <!-- HISTORIA MUNDO - POPUP -->
+            <div id="historia-mundo-popup" class="popup">
+                <div class="popup-header">
+                    <h2>═══════════HISTÓRIA DO MUNDO═════════</h2>
+                    <span class="close">&times;</span>
+                </div>
+
+                <div class="popup-body">
+                    <h3>- ORIGENS</h3>
+                    <p>O mundo em que vocês habitam foi formado há cerca de <b id="milhoes-anos">300 milhões de anos</b>, tendo uma génese bastante semelhante à Terra, sendo a sua única diferença o modo como os ciclos diários se comportam.</p>
+                    <p>Existiram vários eras, as quais foram marcadas pelo tipo de ciclo estabelecido. Entre as iniciais, a duração dos dias e das noites foi oscilando, sendo uma sempre superior à outra, mas as mais recentes têm a da noite claramente estabelecida como a mais prolongada.</p>
+                    <p>Por este motivo, as últimas eras são caracterizadas por um planeta maioritariamente frio e escuro, havendo apenas uma tira reduzida onde a luz solar quase que predomina.</p>
+                    <p>Este tipo de clima influenciou a criação de alianças, territórios, culturas e religiões.</p>
+                    <h3>- ATUALIDADE</h3>
+                    <p>O mundo em que vocês habitam foi formado há cerca de 300 milhões de anos, tendo uma génese bastante semelhante à Terra, sendo a sua única diferença o modo como os ciclos diários se comportam.</p>
+                    <p>Existiram vários eras, as quais foram marcadas pelo tipo de ciclo estabelecido. Entre as iniciais, a duração dos dias e das noites foi oscilando, sendo uma sempre superior à outra, mas as mais recentes têm a da noite claramente estabelecida como a mais prolongada.</p>
+                    <p>Por este motivo, as últimas eras são caracterizadas por um planeta maioritariamente frio e escuro, havendo apenas uma tira reduzida onde a luz solar quase que predomina.</p>
+                    <p>Este tipo de clima influenciou a criação de alianças, territórios, culturas e religiões.</p>
+                </div>
+                
+            </div>
+
+            <!-- MAPA MUNDO - POPUP -->
+            <div id="mapa-mundo-popup" class="popup">
+                <div class="popup-header">
+                    <h2>═════════════MAPA DO MUNDO═══════════</h2>
+                    <span class="close">&times;</span>
+                </div>
+
+                <div class="popup-body">
+                    <img src="images\mapaMundo.png" alt="um mapa fixe" id="mapa-mundo-img"></img>
+                    <h3>- ORIGENS</h3>
+                    <p>O mundo em que vocês habitam foi formado há cerca de <b>300 milhões de anos</b>, tendo uma génese bastante semelhante à Terra, sendo a sua única diferença o modo como os ciclos diários se comportam.</p>
+                    <p>Existiram vários eras, as quais foram marcadas pelo tipo de ciclo estabelecido. Entre as iniciais, a duração dos dias e das noites foi oscilando, sendo uma sempre superior à outra, mas as mais recentes têm a da noite claramente estabelecida como a mais prolongada.</p>
+                    <p>Por este motivo, as últimas eras são caracterizadas por um planeta maioritariamente frio e escuro, havendo apenas uma tira reduzida onde a luz solar quase que predomina.</p>
+                    <p>Este tipo de clima influenciou a criação de alianças, territórios, culturas e religiões.</p>
+                </div>
+                
+            </div>
+
+            <!-- LIMBUS - POPUP -->
+            <div id="limbus-popup" class="popup">
+                <div class="popup-header">
+                    <h2>═════════════════LIMBUS═══════════════</h2>
+                    <span class="close">&times;</span>
+                </div>
+
+                <div class="popup-body">
+                    <p>Absolutamente nada ainda</p>
+                </div>
+                
+            </div>
+
         </div>
     </div>
 
     <!-- Dancing Yellow Man of secrets -->
     <img src="images\869991107344367727.gif" alt="Yellow Freak" id="yellow-freak" draggable="false">
+
+    <!-- PLACEHOLDER FOR MUSIC -->
+    <div id="music-player"></div>
+    <audio id="bg-music" src="music\8regret.mp3" loop></audio>
 
 </body>
 </html>

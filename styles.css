@@ -24,11 +24,17 @@ body {
     border: solid;
     border-width: 8px;
     border-color: rgb(255, 255, 255);
-    padding: 80px;
-    padding-left: 160px;
-    padding-right: 160px;
-    /* flex-direction: row;
-    align-items: center; */
+    padding: 50px;
+    padding-left: 140px;
+    padding-right: 140px;
+}
+
+/* === Logo of the Initial Page === */
+#sota-logo {
+    padding-bottom: 3.7rem;
+    padding-top: 3.7rem;
+    width: 40rem;
+    height: auto;
 }
 
 /* === Buttons of the Initial Page === */
@@ -53,7 +59,7 @@ body {
 }
 
 #buttons button i {
-    font-size: 80px;
+    font-size: 70px;
 }
 
 .button-column {
@@ -80,6 +86,148 @@ i {
 }
 
 
+/* === BG MUSIC === */
+#music-player {
+    position: fixed;
+    top: 3.5rem;
+    right: 3.5rem;
+    width: 100px;
+    height: 100px;
+    z-index: 999;
+    cursor: pointer;
+
+    background-color: #ffffff;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+
+}
+
+#music-player:hover {
+    background-color: rgb(51, 94, 132);
+    transform: scale(1.1);
+}
+
+#yt-container {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+
+/* === POPPUPS ==== */
+.popup {
+    display: none;
+    position: fixed;
+    background: rgb(0, 0, 0);
+    width: 45rem;
+    text-align: justify;
+    z-index: 1000;
+    border: solid #ffffff;
+    border-width: 8px;
+    font-size: 20px;
+    /* max-width: 90vw;   never overflow screen */
+    /* Middle of the Screen */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup-header {
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid #ffffff;
+    border-width: 8px;
+    cursor: grab;
+}
+
+.popup-header h2 {
+    text-align: center;
+    padding: 0;
+    user-select: none;
+    width: 97%;
+}
+
+.popup-body {
+    overflow: scroll;
+    overflow-y: auto; /* vertical scroll only */
+    overflow-x: hidden; /* hides horizontal scrollbar */
+    max-height: 55vh;  /* limits height to x% of viewport */
+    /* max-width: 70vw;   limits width to x% of viewport */
+    padding: 20px;
+    font-size: 20px;
+}
+
+/* Hides popups */
+.popup::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Close button */
+.close {
+    width: 3%;
+    font-size: 40px;
+    cursor: pointer;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    padding-top: 18px;
+    padding-right: 5px;
+}
+
+
+/* === SCROLLBAR ===
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffffff; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #e1e1e1; 
+}
+
+/* Buttons */
+::-webkit-scrollbar-button
+{
+  border-style: solid;
+  height: 16px;
+  width: 16px;
+  -webkit-appearance: none;
+}
+
+/* Up button */
+::-webkit-scrollbar-button:vertical:decrement {
+    border-width: 0 7px 14px 7px;
+    border-color: transparent transparent black transparent;
+    background: white;   /* hide default arrow */
+    background-image: none;
+}
+
+/* Down button */
+::-webkit-scrollbar-button:vertical:increment {
+    border-width: 14px 7px 0 7px;
+    border-color: #000000 transparent transparent transparent;
+    background: white;   /* hide default arrow */
+    background-image: none;
+}
+
+
 /* === OTHERS === */
 
 #yellow-freak {
@@ -88,6 +236,15 @@ i {
     right: 3.5rem;
     width: 100px;
     height: auto;
-    z-index: 1000;
+    z-index: 999;
     cursor: grab;
+}
+
+#mapa-mundo-img {
+    width: 100%;
+    height: auto;
+}
+
+#milhoes-anos {
+    cursor: pointer;
 }
