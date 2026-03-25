@@ -24,6 +24,7 @@ body {
     border: solid;
     border-width: 8px;
     border-color: rgb(255, 255, 255);
+    /* border-radius: 25px; */
     padding: 50px;
     padding-left: 140px;
     padding-right: 140px;
@@ -91,20 +92,39 @@ i {
     position: fixed;
     top: 3.5rem;
     right: 3.5rem;
-    width: 100px;
+
+    width: 65px;
     height: 100px;
+
     z-index: 999;
     cursor: pointer;
+    box-sizing: border-box;
 
     background-color: #ffffff;
-    transition: transform 0.3s ease, background-color 0.3s ease;
 
+    /* IMPORTANT: define the base state */
+    box-shadow: 0 0 0 0 rgba(255,255,255,0);
+
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
 }
 
-#music-player:hover {
-    background-color: rgb(51, 94, 132);
-    transform: scale(1.1);
+/* Hover preview */
+#music-player:hover:not(.playing) {
+    background-color: #000;
+    box-shadow: 0 0 0 5px #ffffff;
 }
+
+/* Persistent playing state */
+#music-player.playing {
+    background-color: #000;
+    box-shadow: 0 0 0 5px #ffffff;
+    transform: scale(1.05);
+}
+
+
 
 #yt-container {
     width: 0;
@@ -129,6 +149,11 @@ i {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    resize: both;           /* 🔑 allow resizing */
+    overflow: auto;         /* 🔑 required for resize to work */
+    max-width: 90vw;        /* prevent screen overflow */
+    max-height: 90vh;
+    --resize-area: 16px;
 }
 
 .popup-header {
@@ -153,7 +178,26 @@ i {
     max-height: 55vh;  /* limits height to x% of viewport */
     /* max-width: 70vw;   limits width to x% of viewport */
     padding: 20px;
+    padding-bottom: 0;
     font-size: 20px;
+}
+
+.text-column {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical */
+    gap: 60px; /* space between columns */
+}
+
+.location ul {
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+
+.popup-body h3 {
+    font-size: 27px;
 }
 
 /* Hides popups */
@@ -189,7 +233,7 @@ i {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #000000; 
+  background: #000000;
 }
  
 /* Handle */
@@ -197,14 +241,8 @@ i {
   background: #ffffff; 
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #e1e1e1; 
-}
-
 /* Buttons */
-::-webkit-scrollbar-button
-{
+::-webkit-scrollbar-button {
   border-style: solid;
   height: 16px;
   width: 16px;
@@ -245,6 +283,30 @@ i {
     height: auto;
 }
 
+#building_test_img {
+    width: 100%;
+    height: auto;
+}
+
 #milhoes-anos {
     cursor: pointer;
+}
+
+#que-simpatica {
+    font-size: 30px;
+}
+
+.info-importante {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: white 8px solid;
+    text-align: left;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+p {
+    line-height: 18pt;
 }

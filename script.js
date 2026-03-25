@@ -21,12 +21,14 @@ buttons.forEach(button => {
 });
 
 // === OnClick ---> Close Button ===
-const closeButton = document.querySelector(".close");
-closeButton.addEventListener("click", () => {
-    audio.currentTime = 0;
-    audio.play();
-});
+const closeButtons = document.querySelectorAll(".close");
 
+closeButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        audio.currentTime = 0;
+        audio.play();
+    });
+});
 
 // === OnClick --> Yellow Freak ===
 const squeak = new Audio("sounds/zapsplat_multimedia_game_sound_8_bit_blip_short_squeak_112042.mp3");
@@ -35,6 +37,7 @@ const yellowFreak = document.getElementById("yellow-freak");
 squeak.volume = 0.3; // Este gajo guincha buéda alto
 
 const handleYellowClick = () => {
+    audio.currentTime = 0;
     squeak.play();
 }
 
@@ -44,6 +47,7 @@ yellowFreak.addEventListener("click", handleYellowClick);
 const title = document.getElementById("sota-logo");
 
 const handleLogoClick = () => {
+    audio.currentTime = 0;
     squeak.play();
 }
 
@@ -53,16 +57,14 @@ title.addEventListener("click", handleLogoClick);
 const musicButton = document.getElementById("music-player");
 const bgMusic = document.getElementById("bg-music");
 
-let isPlaying = false;
-
 musicButton.addEventListener("click", () => {
-    if (!isPlaying) {
+    if (bgMusic.paused) {
         bgMusic.volume = 0.3;
         bgMusic.play();
-        isPlaying = true;
+        musicButton.classList.add("playing");
     } else {
         bgMusic.pause();
-        isPlaying = false;
+        musicButton.classList.remove("playing");
     }
 });
 
